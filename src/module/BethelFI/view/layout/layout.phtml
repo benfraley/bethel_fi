@@ -1,0 +1,57 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+
+    <head>
+        <title>Bethel First Impressions</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <?php
+        echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                ->prependStylesheet($this->basePath() . "js/jquery.mobile/jquery.mobile-1.4.5.min.css");
+
+        echo $this->headScript()
+                ->prependFile($this->basePath() . "js/jquery-2.1.3.min.js")
+                ->prependFile($this->basePath() . "js/jquery.mobile/jquery.mobile-1.4.5.min.js");
+        ?>
+
+        <style>
+            h1 {
+                text-align: center;
+            }
+
+            #layout {
+                padding: 50px 50px;
+            }
+
+            .positions {
+                width: 100px !important;
+                background: #22aadd !important;
+            }
+
+        </style>
+
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+                $("#layout").click(function(e){
+                    //var parentOffset = $(this).parent().offset();
+                    var relX = e.pageX; // - parentOffset.left;
+                    var relY = e.pageY; // - parentOffset.top;
+                    var position_num = $(".positions").length;
+                    $("#dashboard-page").append("<div id=\"position"+position_num+"\">Position " + position_num +"</div>");
+                    $("#position"+position_num).offset({left: relX, top: relY});
+                    $("#position"+position_num).addClass("positions");
+                });
+            });
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <?php echo $this->content; ?>
+            
+    </body>
+</html>
