@@ -11,11 +11,23 @@ namespace BethelFI\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\Config\Config;
+use \BethelFI\Model\Position as Position;
+use \BethelFI\Model\PositionTable as PositionTable;
+use Zend\Db\TableGateway\TableGateway;
 
 class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
+        $config = new Config(include 'config/autoload/local.php');
+        
+        $tableGateway = new TableGateway("position", $config->get("adapter"));
+        $positionTable = new PositionTable($tableGateway);
+        $p = $positionTable->getPosition(1);
+        echo $p->date_created;
+        die();
+        
         return new ViewModel();
     }
 }

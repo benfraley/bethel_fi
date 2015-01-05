@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `campus` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `campus_name` varchar(255) NOT NULL,
-  `date_created` date NOT NULL,
+  `date_created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` int(1) NOT NULL DEFAULT '1',
   `campus_paster` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `campus_layout` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `campus_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
-  `date_created` date NOT NULL,
+  `date_created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `campus_id` (`campus_id`,`layout_id`),
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `fi_team` (
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `is_active` int(1) NOT NULL DEFAULT '1',
-  `date_created` date NOT NULL,
+  `date_created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `fi_team` (
 CREATE TABLE IF NOT EXISTS `layout` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `img_loc` varchar(255) NOT NULL,
-  `date_created` date NOT NULL,
+  `date_created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `position` (
   `x` int(11) NOT NULL,
   `y` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
-  `date_created` date NOT NULL,
+  `date_created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `layout_id` (`layout_id`)
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `date_created` date NOT NULL,
+  `date_created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

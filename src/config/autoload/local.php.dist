@@ -11,5 +11,15 @@
  * credentials from accidentally being committed into version control.
  */
 
+/**
+ * save this file as local.php and change the username & password
+ */
+
 return array(
+     $adapter = new Zend\Db\Adapter\Adapter(array(
+        'driver' => 'Pdo_Mysql',
+        'database' => 'bethel_fi',
+        'username' => 'change_me',
+        'password' => 'change_me'
+     ))
 );
