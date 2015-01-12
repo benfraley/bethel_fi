@@ -31,21 +31,25 @@ class PositionTable
         return $row;
     }
 
-    public function savePosition(Album $album)
+    public function savePosition($position)
     {
         $data = array(
-            'artist' => $album->artist,
-            'title'  => $album->title,
+            'x' => $position->x,
+            'y'  => $position->y,
+            'position'  => $position->position,
+            'layout_id'  => $position->layout_id
         );
+        
+        die(print_r($position));
 
-        $id = (int) $album->id;
+        $id = (int) $position->id;
         if ($id == 0) {
             $this->tableGateway->insert($data);
         } else {
             if ($this->getAlbum($id)) {
                 $this->tableGateway->update($data, array('id' => $id));
             } else {
-                throw new \Exception('Album id does not exist');
+                throw new \Exception('Position id does not exist');
             }
         }
     }

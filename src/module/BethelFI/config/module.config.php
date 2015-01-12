@@ -19,7 +19,7 @@ return array(
             'application' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/application',
+                    'route'    => '/bethelfi',
                     'defaults' => array(
                         '__NAMESPACE__' => 'BethelFI\Controller',
                         'controller'    => 'Index',
@@ -28,7 +28,7 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-                    'default' => array(
+                    'BethelFI' => array(
                         'type'    => 'Segment',
                         'options' => array(
                             'route'    => '/[:controller[/:action]]',
@@ -76,7 +76,8 @@ return array(
         'exception_template'       => 'error/index',
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
+            'bethelfi/index/addPosition'             => __DIR__ . '/../view/bethel-fi/index/position.phtml',
+            'bethelfi/index/deletePosition'          => __DIR__ . '/../view/bethel-fi/index/position.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),

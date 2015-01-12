@@ -91,6 +91,7 @@ CREATE TABLE IF NOT EXISTS `position` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `x` int(11) NOT NULL,
   `y` int(11) NOT NULL,
+  `position` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   `date_created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` int(1) NOT NULL DEFAULT '1',

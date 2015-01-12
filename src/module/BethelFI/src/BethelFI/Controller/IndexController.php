@@ -12,22 +12,39 @@ namespace BethelFI\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\Config\Config;
+use Zend\Http\Request;
+use Zend\Db\TableGateway\TableGateway;
+
 use \BethelFI\Model\Position as Position;
 use \BethelFI\Model\PositionTable as PositionTable;
-use Zend\Db\TableGateway\TableGateway;
+
 
 class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
+        return new ViewModel();
+    }
+    
+    public function addPositionAction()
+    {
+        
         $config = new Config(include 'config/autoload/local.php');
+        
+        $position->x = $this->params()->fromQuery('x');
+        $position->y = $this->params()->fromQuery('y');
+        $position->position = $this->params()->fromQuery('position');
+        $position->layout_id = 1;
         
         $tableGateway = new TableGateway("position", $config->get("adapter"));
         $positionTable = new PositionTable($tableGateway);
-        $p = $positionTable->getPosition(1);
-        echo $p->date_created;
-        die();
+        $p = $positionTable->savePosition($position);
         
-        return new ViewModel();
+        $vm = new ViewModel();
+        $vm->setTerminal(true);
+        $vm->setVariable("message", print_r($p, true));
+        return $vm;
+        
     }
+    
 }
