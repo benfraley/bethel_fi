@@ -4,45 +4,50 @@
     </div>
     <div data-role="content">
         <div id="layout">
-            <table>
-                <thead>
-                    <tr>
-                        <td>Attendance</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0-9 months</td>
-                        <td><input type="text" class="attendance" /></td>
-                        <td>Auditorium</td>
-                        <td><input type="text" class="attendance" /></td>
-                    </tr>
-                    <tr>
-                        <td>10-18 months</td>
-                        <td><input type="text" class="attendance" /></td>
-                    </tr>
-                    <tr>
-                        <td>19-27 months</td>
-                        <td><input type="text" class="attendance" /></td>
-                    </tr>
-                    <tr>
-                        <td>3-4 year olds</td>
-                        <td><input type="text" class="attendance" /></td>
-                    </tr>
-                    <tr>
-                        <td>5-Kindergarten</td>
-                        <td><input type="text" class="attendance" /></td>
-                    </tr>
-                    <tr>
-                        <td>1-2 Grade</td>
-                        <td><input type="text" class="attendance" /></td>
-                    </tr>
-                    <tr>
-                        <td>3-4 Grade</td>
-                        <td><input type="text" class="attendance" /></td>
-                    </tr>
-                </tbody>
-            </table>
+            <form id="attendanceForm" method="post">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Attendance</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0-9 months</td>
+                            <td><input type="text" name="kids0-9" class="attendance" /></td>
+                            <td>Auditorium</td>
+                            <td><input type="text" name="auditorium" class="attendance" /></td>
+                        </tr>
+                        <tr>
+                            <td>10-18 months</td>
+                            <td><input type="text" name="kids10-18" class="attendance" /></td>
+                            <td>Total</td>
+                            <td><input type="text" class="totalAttendance" /></td>
+                        </tr>
+                        <tr>
+                            <td>19-27 months</td>
+                            <td><input type="text" name="kids19-27" class="attendance" /></td>
+                            <td><button id="submitAttendance">Go</button></td>
+                        </tr>
+                        <tr>
+                            <td>3-4 year olds</td>
+                            <td><input type="text" name="kids3-4" class="attendance" /></td>
+                        </tr>
+                        <tr>
+                            <td>5-Kindergarten</td>
+                            <td><input type="text" name="kids5-k" class="attendance" /></td>
+                        </tr>
+                        <tr>
+                            <td>1-2 Grade</td>
+                            <td><input type="text" name="kids1-2" class="attendance" /></td>
+                        </tr>
+                        <tr>
+                            <td>3-4 Grade</td>
+                            <td><input type="text" name="kids3-4" class="attendance" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
         </div>
     </div>
 </div>

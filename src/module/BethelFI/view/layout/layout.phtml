@@ -11,9 +11,10 @@
                 ->prependStylesheet($this->basePath() . "js/jquery.mobile/jquery.mobile-1.4.5.min.css");
 
         echo $this->headScript()
-                ->prependFile($this->basePath() . "js/jquery-2.1.3.min.js")
-                ->appendFile($this->basePath() . "js/jquery.mobile/jquery.mobile-1.4.5.min.js")
-                ->appendFile($this->basePath() . "js/position.js");
+                ->prependFile($this->basePath() . "/js/jquery-2.1.3.min.js")
+                ->appendFile($this->basePath() . "/js/jquery.mobile/jquery.mobile-1.4.5.min.js")
+                //->appendFile($this->basePath() . "/js/position.js")
+                ->appendFile($this->basePath() . "/js/attendance.js");
         ?>
 
         <style>

@@ -76,8 +76,10 @@ return array(
         'exception_template'       => 'error/index',
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'bethelfi/index/addPosition'             => __DIR__ . '/../view/bethel-fi/index/position.phtml',
-            'bethelfi/index/deletePosition'          => __DIR__ . '/../view/bethel-fi/index/position.phtml',
+            'bethelfi/index/addPosition'        => __DIR__ . '/../view/bethel-fi/index/position.phtml',
+            'bethelfi/index/deletePosition'     => __DIR__ . '/../view/bethel-fi/index/position.phtml',
+            'bethelfi/index/attendance'         => __DIR__ . '/../view/bethel-fi/index/attendance.phtml',
+            'bethelfi/index/submitAttendance'   => __DIR__ . '/../view/bethel-fi/index/submit-attendance.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),
